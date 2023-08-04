@@ -28,7 +28,7 @@ layout: blog
             {% if post.data.description %}
                 <p class="text-lg text-gray-500 mb-3">
                     {{ post.data.description }}
-                </p>
+                  </p>
             {% endif %}
 
             <p>
@@ -39,6 +39,10 @@ layout: blog
 
         </article>
     {% endfor %}
+
+  <<script>
+    console.log({{authorsList}});
+  </script>
     {% for auth in authorsList %}
       <p>{{ auth.name }}</p>
     {% endfor %}
