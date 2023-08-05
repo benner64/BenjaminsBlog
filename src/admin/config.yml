@@ -57,8 +57,8 @@ collections:
         widget: "relation"
         collection: "authors"
         search_fields: ["name"]
-        value_field: "url"
-        display_fields: ["name", "date", "url"]
+        value_field: "{{slug}}"
+        display_fields: ["name", "date"]
   - label: "Settings"
     name: "settings"
     editor:
