@@ -52,13 +52,22 @@ collections:
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
-      - label: "Author"
-        name: "author"
+      - label: "Author Link"
+        name: "authorLink"
         widget: "relation"
         collection: "authors"
         search_fields: ["name"]
         value_field: "{{slug}}"
         display_fields: ["name"]
+        multiple: true
+      - label: "Author"
+        name: "author"
+        widget: "relation"
+        collection: "authors"
+        search_fields: ["name"]
+        value_field: "name"
+        display_fields: ["name"]
+        multiple: true
   - label: "Settings"
     name: "settings"
     editor:
