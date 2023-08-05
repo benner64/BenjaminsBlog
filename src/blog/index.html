@@ -3,15 +3,14 @@ layout: blog
 ---
 
 <section class="mt-15">
-    {% set postslist = collections.post %}
-    {% set authorsList = collections.authors %}
 
-    {% for post in postslist | reverse %}
+
+{% for author in collections.authors %}
         <article class="my-8">
             <h2 class="font-bold text-3xl text-gray-900 mb-2">
-                <a href="{{ post.url | url }}">
-                    {% if post.data.title %}
-                        {{ post.data.title }}
+                <a href="{{ author.url | url }}">
+                    {% if author.data.name %}
+                        {{ author.data.name }}
                     {% else %}
                         Untitled
                     {% endif %}
@@ -20,33 +19,20 @@ layout: blog
             <p class="text-base leading-6 text-gray-500 mb-3">
                 <time>
                     {{ post.date | readableDate }}
-                    by
-                    <a>{{ post.data.author }}</a>
-
                 </time>
             </p>
-            {% if post.data.description %}
+            {% if author.data.description %}
                 <p class="text-lg text-gray-500 mb-3">
-                    {{ post.data.description }}
+                    {{ author.data.description }}
                   </p>
             {% endif %}
 
             <p>
-                <a href="{{ post.url | url }}" class="text-indigo-500 font-bold text-lg">
+                <a href="{{ author.url | url }}" class="text-indigo-500 font-bold text-lg">
                     Read more →
                 </a>
             </p>
 
         </article>
     {% endfor %}
-
-  <script>
-    console.log({{authorsList}});
-  </script>
-    {% for auth in authorsList %}
-      <p>{{ auth.name }}</p>
-    {% endfor %}
-      
-
-
 </section>
