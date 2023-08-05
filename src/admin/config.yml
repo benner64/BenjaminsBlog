@@ -32,7 +32,7 @@ collections:
         options: ["Tags", "created", "from", "config.yml"]
   - label: "Authors"
     name: "authors"
-    folder: "src/authors"
+    folder: "src/library/authors"
     create: true
     editor:
       preview: true
@@ -43,7 +43,7 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" }
   - label: "Books"
     name: "books"
-    folder: "src/books"
+    folder: "src/library/books"
     create: true
     editor:
       preview: true
@@ -57,8 +57,8 @@ collections:
         widget: "relation"
         collection: "authors"
         search_fields: ["name"]
-        value_field: "name"
-        display_fields: ["name", "date"]
+        value_field: "url"
+        display_fields: ["name", "date", "url"]
   - label: "Settings"
     name: "settings"
     editor:
